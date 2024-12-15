@@ -41,3 +41,9 @@ class BasePage:
         """(*locator) is to unpack the tuple into 2 separate aruguments"""
         return elementType
 
+    def webElement_isEnabled(self, elementLocator):
+        return self.getElement(elementLocator).is_enabled()
+
+    def webElement_isSelected(self, elementLocator):
+        return self.getElement(elementLocator).is_selected()
+

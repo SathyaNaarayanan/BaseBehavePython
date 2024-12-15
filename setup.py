@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="baseBehaveFramework",  # Package name
-    version="0.1.0",  # Version
+    version="0.1.1",  # Version
     description="Reusable Behave framework with Selenium helpers",  # Short description
     long_description=open("README.md").read(),  # Long description from README
     long_description_content_type="text/markdown",
