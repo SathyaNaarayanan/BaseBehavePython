@@ -50,3 +50,5 @@ class BasePage:
     def webElement_submit(self, elementLocator):
         return self.getElement(elementLocator).submit()
 
+    def testNewaddingMethods(self, elementLocator):
+        return "noActionRequired"
