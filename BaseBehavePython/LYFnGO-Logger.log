@@ -1,6 +1,6 @@
-2024-12-15 01:04:28,827 - BaseBehavePython/LYFnGO-Logger - INFO - function step started: Launch Google chrome website
-2024-12-15 01:04:28,828 - BaseBehavePython/LYFnGO-Logger - INFO - Google Launched launched
-2024-12-15 01:04:28,982 - BaseBehavePython/LYFnGO-Logger - INFO - function step passed: Launch Google chrome website
-2024-12-15 01:04:29,087 - BaseBehavePython/LYFnGO-Logger - INFO - function step started: verify google search button
-2024-12-15 01:04:29,087 - BaseBehavePython/LYFnGO-Logger - INFO - Verify input text label
-2024-12-15 01:04:29,132 - BaseBehavePython/LYFnGO-Logger - INFO - function step passed: verify google search button
+2024-12-15 08:22:56,119 - BaseBehavePython/LYFnGO-Logger - INFO - function step started: Launch Google chrome website
+2024-12-15 08:22:56,119 - BaseBehavePython/LYFnGO-Logger - INFO - Google Launched launched
+2024-12-15 08:22:56,159 - BaseBehavePython/LYFnGO-Logger - INFO - function step passed: Launch Google chrome website
+2024-12-15 08:22:56,291 - BaseBehavePython/LYFnGO-Logger - INFO - function step started: verify google search button
+2024-12-15 08:22:56,291 - BaseBehavePython/LYFnGO-Logger - INFO - Verify input text label
+2024-12-15 08:22:56,330 - BaseBehavePython/LYFnGO-Logger - INFO - function step passed: verify google search button

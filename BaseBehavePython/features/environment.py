@@ -15,10 +15,10 @@ def before_all(context):
 
 def before_scenario(context, scenario):
     try:
-        browser = configReader.read_configuration("basic info", "browser").lower()
-        context.driver: WebDriver = driver_initialization(browser)
+        # browser = configReader.read_configuration("basic info", "browser").lower()
+        context.driver: WebDriver = driver_initialization(getBrowser())
         context.driver.maximize_window()
-        launchApplication(context.driver)
+        launchApplication(context.driver, getApplicationURL())
     except Exception as e:
         context.logger.error(f"ERROR : {str(e)}")
         raise
@@ -60,15 +60,27 @@ def driver_initialization(browser):
         logger.error(f"ERROR : {str(e)}")
         raise
 
-def launchApplication(driver):
+def getApplicationURL():
+    return configReader.read_configuration("basic info", "url")
+
+def getBrowser():
+    return configReader.read_configuration("basic info", "browser").lower()
+
+def launchApplication(driver, url):
     try:
-        driver.get(configReader.read_configuration("basic info", "url"))
+        driver.get(url)
     except Exception as e:
         logger.error(f"ERROR : {str(e)}")
         raise
 
 def driver_close(driver):
-    driver: WebDriver.quit()
+        try:
+            driver.close()
+            driver.quit()
+        except Exception as e:
+            print(f"Error quitting driver: {e}")
+        finally:
+            driver = None
 
 def logger_Predefined(filename):
     logger = logging.getLogger('BaseBehavePython/'+filename)
