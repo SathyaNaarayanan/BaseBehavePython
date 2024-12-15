@@ -52,3 +52,6 @@ class BasePage:
 
     def testNewaddingMethods(self, elementLocator):
         return "noActionRequired"
+
+    def testNewaddingMethod12(self, elementLocator):
+        return "noActionRequired"
