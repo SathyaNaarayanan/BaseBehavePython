@@ -11,7 +11,7 @@ from BaseBehavePython.utilities import configReader
 
 #hooks
 def before_all(context):
-    context.logger = logger_Predefined("LYFnGO-Logger")
+    context.logger = logger_Predefined("BaseBehavePython","LYFnGO-Logger")
 
 def before_scenario(context, scenario):
     try:
@@ -82,16 +82,16 @@ def driver_close(driver):
         finally:
             driver = None
 
-def logger_Predefined(filename):
-    logger = logging.getLogger('BaseBehavePython/'+filename)
+def logger_Predefined(filepath, filename):
+    logger = logging.getLogger(filepath+'/'+filename)
     logger.setLevel(logging.INFO)
 
     # existing logs will be removed
-    with open('BaseBehavePython/'+filename+'.log', 'w'):
+    with open(filepath+'/'+filename+'.log', 'w'):
         pass
 
     # file Handler - for new logs
-    file_handler = logging.FileHandler('BaseBehavePython/'+filename+'.log')
+    file_handler = logging.FileHandler(filepath+'/'+filename+'.log')
     file_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
     logger.addHandler(file_handler)
     return logger
