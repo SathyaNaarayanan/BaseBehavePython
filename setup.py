@@ -14,7 +14,7 @@ setup(
     install_requires=[
         "behave>=1.2.6",
         "selenium>=4.0.0",
-        'BaseBehavePython @ git+https://github.com/userName/BaseBehavePython.git@v0.1.1',
+        'BaseBehavePython @ git+https://github.com/userName/BaseBehavePython.git@v0.1.1'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
