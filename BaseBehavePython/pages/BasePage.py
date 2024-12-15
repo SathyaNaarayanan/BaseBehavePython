@@ -47,3 +47,6 @@ class BasePage:
     def webElement_isSelected(self, elementLocator):
         return self.getElement(elementLocator).is_selected()
 
+    def webElement_submit(self, elementLocator):
+        return self.getElement(elementLocator).submit()
+
