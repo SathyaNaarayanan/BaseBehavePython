@@ -13,8 +13,8 @@ setup(
     include_package_data=True,  # Include non-code files (e.g., feature files)
     install_requires=[
         "behave>=1.2.6",
-        "selenium>=4.0.0",
-        'BaseBehavePython @ git+https://github.com/userName/BaseBehavePython.git@v0.1.1'
+        "selenium>=4.0.0"
+        # 'BaseBehavePython @ git+https://github.com/userName/BaseBehavePython.git@v0.1.1'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
