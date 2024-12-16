@@ -15,7 +15,6 @@ def before_all(context):
 
 def before_scenario(context, scenario):
     try:
-        # browser = configReader.read_configuration("basic info", "browser").lower()
         context.driver: WebDriver = driver_initialization(getBrowser())
         context.driver.maximize_window()
         launchApplication(context.driver, getApplicationURL())

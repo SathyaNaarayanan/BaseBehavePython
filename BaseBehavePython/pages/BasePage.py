@@ -1,3 +1,5 @@
+from encodings.punycode import selective_find
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.remote.webdriver import WebDriver
@@ -50,8 +52,41 @@ class BasePage:
     def webElement_submit(self, elementLocator):
         return self.getElement(elementLocator).submit()
 
-    def testNewaddingMethods(self, elementLocator):
-        return "noActionRequired"
+    def base_uploadFile(self, elementLocator, fileLocation):
+        self.getElement(elementLocator).send_keys(fileLocation)
 
-    def testNewaddingMethod12(self, elementLocator):
-        return "noActionRequired"
+    def base_driverRefresh(self):
+        self.driver.refresh()
+
+    def base_driverForward(self):
+        self.driver.forward()
+
+    def base_driverBack(self):
+        self.driver.back()
+
+    def base_simpleAlert(self, elementLocator):
+        WebDriverWait(self.driver, 10).until(EC.alert_is_present())
+        self.getElement(elementLocator).click()
+        self.driver.switch_to.alert.accept()
+
+    def base_acceptConfirmationAlert(self, elementLocator):
+        WebDriverWait(self.driver, 10).until(EC.alert_is_present())
+        self.getElement(elementLocator).click()
+        self.driver.switch_to.alert.accept()
+
+    def base_dismissConfirmationAlert(self, elementLocator):
+        WebDriverWait(self.driver, 10).until(EC.alert_is_present())
+        self.getElement(elementLocator).click()
+        self.driver.switch_to.alert.dismiss()
+
+    def base_promptalert(self, elementLocator, inputText):
+        WebDriverWait(self.driver, 10).until(EC.alert_is_present())
+        self.getElement(elementLocator).click()
+        alert = self.driver.switch_to.alert
+        alert.send_keys(inputText)
+        alert.accept()
+
+
+
+
+
