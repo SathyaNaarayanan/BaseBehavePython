@@ -8,16 +8,16 @@ from BaseBehavePython.utilities.BrowserManager import BrowserManager
 from BaseBehavePython.utilities.DriverManager import DriverManager
 from BaseBehavePython.utilities import configReader
 
-
+_configFilePath = "BaseBehavePython/configurations/config.ini"
 #hooks
 def before_all(context):
     context.logger = logger_Predefined("BaseBehavePython","LYFnGO-Logger")
 
 def before_scenario(context, scenario):
     try:
-        context.driver: WebDriver = driver_initialization(getBrowser())
+        context.driver: WebDriver = driver_initialization(getBrowser(_configFilePath))
         context.driver.maximize_window()
-        launchApplication(context.driver, getApplicationURL())
+        launchApplication(context.driver, getApplicationURL(_configFilePath))
     except Exception as e:
         context.logger.error(f"ERROR : {str(e)}")
         raise
@@ -59,11 +59,11 @@ def driver_initialization(browser):
         logger.error(f"ERROR : {str(e)}")
         raise
 
-def getApplicationURL():
-    return configReader.read_configuration("basic info", "url")
+def getApplicationURL(filePath):
+    return configReader.read_configuration(filePath, "basic info", "url")
 
-def getBrowser():
-    return configReader.read_configuration("basic info", "browser").lower()
+def getBrowser(filePath):
+    return configReader.read_configuration(filePath,"basic info", "browser").lower()
 
 def launchApplication(driver, url):
     try:

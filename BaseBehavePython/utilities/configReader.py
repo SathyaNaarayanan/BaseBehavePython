@@ -1,7 +1,7 @@
 from configparser import ConfigParser
 
 
-def read_configuration(category, key):
+def read_configuration(filePath, category, key):
     config = ConfigParser()
-    config.read("BaseBehavePython/configurations/config.ini")
+    config.read(filePath)
     return config.get(category, key)
