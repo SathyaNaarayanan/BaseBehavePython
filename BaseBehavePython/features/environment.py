@@ -15,9 +15,9 @@ def before_all(context):
 
 def before_scenario(context, scenario):
     try:
-        context.driver: WebDriver = driver_initialization(getBrowser(_configFilePath))
+        context.driver: WebDriver = driver_initialization(getBrowser(_configFilePath,"basic info", "browser"))
         context.driver.maximize_window()
-        launchApplication(context.driver, getApplicationURL(_configFilePath))
+        launchApplication(context.driver, getApplicationURL(_configFilePath,"basic info", "url"))
     except Exception as e:
         context.logger.error(f"ERROR : {str(e)}")
         raise
@@ -59,11 +59,11 @@ def driver_initialization(browser):
         logger.error(f"ERROR : {str(e)}")
         raise
 
-def getApplicationURL(filePath):
-    return configReader.read_configuration(filePath, "basic info", "url")
+def getApplicationURL(filePath, category, key):
+    return configReader.read_configuration(filePath, category, key)
 
-def getBrowser(filePath):
-    return configReader.read_configuration(filePath,"basic info", "browser").lower()
+def getBrowser(filePath, category, key):
+    return configReader.read_configuration(filePath,category, key).lower()
 
 def launchApplication(driver, url):
     try:
