@@ -1,9 +1,12 @@
-Copyright [2024] [Sathya]
+MIT License - Modified for Read-Only Use
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software, to use the software for personal or non-commercial purposes
-only. Redistribution, modification, and creation of derivative works are
-strictly prohibited.
+of this software and associated documentation files (the "Software"), to use
+the Software for personal or non-commercial purposes only, subject to the
+following conditions:
+
+- The Software may not be modified, altered, or used to create derivative works.
+- The Software may not be redistributed without prior written permission.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
